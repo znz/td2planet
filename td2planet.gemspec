@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
 
    s.author = "Kazuhiro NISHIYAMA"
    s.email = "zn@mbf.nifty.com"
-   #s.homepage = "http://rubyforge.org/projects/td2planet/"
-   #s.rubyforge_project = "td2planet"
+   s.homepage = "http://rubyforge.org/projects/td2planet/"
+   s.rubyforge_project = "td2planet"
 
    s.platform = Gem::Platform::RUBY
    s.summary = "planet of ruby, mainly for tdiary"
