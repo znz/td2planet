@@ -1,0 +1,23 @@
+<div class="section">
+<%
+	section_body = to_section_body(item)
+	# tdiary makerss.rb plugin
+	if /<h3/ =~ section_body
+-%>
+	<%=
+		section_body.sub(/<h3.*?>/) do
+			$& + to_sanchor(item) # + to_categories(item) # categories in original h3
+		end.sub(/<\/h3>/) do
+			to_author(item) + $&
+		end
+	%>
+<% else -%>
+	<h3>
+		<%= to_sanchor(item) %>
+		<%= to_categories(item) %>
+		<%=hk item.title %>
+		<%= to_author(item) %>
+	</h3>
+	<%= to_section_body(item) %>
+<% end -%>
+</div>

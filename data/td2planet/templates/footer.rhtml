@@ -1,0 +1,30 @@
+</div>
+<div class="sidebar">
+<% if @config['logo_html'] -%>
+	<%= @config['logo_html'] %>
+<% end -%>
+	<div class="block">
+		<h3>Subscriptions</h3>
+		<ul>
+<% @rss_list.sort_by{|rss| -rss.item.date.to_i }.each do |rss| -%>
+				<li>
+					<a href="<%=hk rss.channel.link %>" title="<%=hk rss.channel.description %>"><%=hk rss.channel.title %></a>
+					<a href="<%=hk rss.channel.about %>">(feed)</a>
+				</li>
+<% end -%>
+		</ul>
+	</div>
+
+	<div class="block">
+		<h3>Other formats</h3>
+		<ul>
+				<li><a href="rss10.xml">RSS 1.0</a></li>
+				<li><a href="rss20.xml">RSS 2.0</a></li>
+				<li><a href="opml.xml">opml</a></li>
+		</ul>
+	</div>
+
+	<div class="block">
+		<p>Last updated: <%= Time.now.localtime.strftime('%Y-%m-%d %H:%M:%S') %></p>
+	</div>
+</div>

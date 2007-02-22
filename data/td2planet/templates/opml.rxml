@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+	<head>
+		<title><%=h @config['title'] %></title>
+		<dateCreated><%=h Time.now %></dateCreated>
+		<dateModified><%=h Time.now %></dateModified>
+<% if @config.key?('author') -%>
+		<ownerName><%=h @config['author'] %></ownerName>
+<% end -%>
+<% if @config.key?('made') -%>
+		<ownerEmail><%=h @config['made'].sub(/^mailto:/, '') %></ownerEmail>
+<% end -%>
+	</head>
+	<body>
+		<% rss_list.sort_by{|rss| -rss.item.date.to_i }.each do |rss| -%>
+			<outline text="<%=hk rss.channel.title %>" type="link" xmlUrl="<%=hk rss.channel.link %>"/>
+		<% end -%>
+	</body>
+</opml>

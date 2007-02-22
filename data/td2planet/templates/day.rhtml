@@ -1,0 +1,30 @@
+<hr class="sep">
+<div class="day">
+	<h2>
+		<span class="date"><%=h date_format(items[0]) %></span>
+		<span class="title">
+<% if rss.channel.link -%>
+			<a href="<%=hk rss.channel.link %>"><%=hk rss.channel.title %></a>
+<% else -%>
+			<%=hk rss.channel.title %>
+<% end -%>
+<% if rss.channel.dc_creator -%>
+			(<%=hk rss.channel.dc_creator %>)
+<% end -%>
+		</span>
+	</h2>
+	<div class="body">
+<% items.each do |item| -%>
+		<%= section(item, rss) -%>
+<% end -%>
+	</div>
+<% if /./ =~ rss.channel.dc_rights.to_s -%>
+	<div class="comment">
+		<!--<div class="caption"></div>-->
+		<div class="commentshort">
+			<!--<p><span class="canchor"></span><span class="commentator"></span>&nbsp;[...]</p>-->
+			<p><%=hk rss.channel.dc_rights %></p>
+		</div>
+	</div>
+<% end -%>
+</div>

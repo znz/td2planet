@@ -1,0 +1,63 @@
+= TD2Planet
+This is a planet implementation of ruby, mainly for tdiary.
+
+See http://www.planetplanet.org about planet.
+
+== Install
+=== Install using setup.rb
+1. ruby setup.rb
+
+=== Install using rubygems
+1. gem build *.gemspec
+2. gem install *.gem
+
+== Usage
+1. copy and edit config.yaml
+2. run "td2planet.rb config.yaml"
+3. copy output files to public directory if need be
+4. set cron and so on if need be
+
+=== Usage without install
+1. copy and edit config.yaml
+2. run "ruby -I lib bin/td2planet.rb config.yaml"
+3. same as above
+
+== SECURITY NOTICE
+Do not add untrusted feeds.
+All content:encoded in feeds output to the file of output_html as is,
+even if content:encoded includes scripts and so on.
+
+To avoid security problem, I recommend to divide the domain of
+this planet from the domains of other contents.
+(e.g. planet.example.jp)
+
+== Customize Output
+After customize, run "td2planet.rb -n config.yaml" to update output files.
+
+=== Customize Template
+1. make override templates directory
+2. copy the file under templates to the override templates directory
+3. edit the file
+4. add the override templates directory to templates_path in config.yaml
+
+=== Customize Formatter
+1. copy default_formatter.rb or sample_formatter.rb to ./your_formatter.rb
+2. edit the file (you must change class name from DefaultFormatter or SampleFormatter to YourFormatter if the filename is your_formatter.rb)
+
+== Q&A
+[Q. Why do this planet outputs content:encoded as is?]
+ A. I can not keep safe white lists and/or black lists.
+ (see one of white lists: http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%A5%C0%A5%A4%A5%A2%A5%EA%A1%BCXSS%C2%D0%BA%F6 (Japanese))
+[Q. Why do not output feeds include contents?]
+ A. If you use other feed reader, you can import original feeds
+ from opml to the feed reader.
+
+== License
+setup.rb:: GNU LGPL
+other files:: MIT-LICENSE
+
+Copyright (c) 2006, 2007 Kazuhiro NISHIYAMA
+
+--
+# -*- coding: utf-8 -*-
+# vim: ts=2 sw=2 sts=2 fenc=utf-8:

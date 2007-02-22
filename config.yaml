@@ -1,0 +1,57 @@
+## general config
+title: TD2Planet Sample
+base_uri: http://planet.example.jp/
+
+## feed URIs
+uri:
+  - http://kazuhiko.tdiary.net/index.rdf
+  - http://sho.tdiary.net/index.rdf
+  - http://www.tdiary.net/index.rdf
+  - http://www.tdiary.org/index.rdf
+
+## feeds cache into cache_dir
+cache_dir: cache
+
+## generated files into output_dir
+output_dir: output
+output_html: planet.html
+
+## themes
+#tdiary_theme_path: http://localhost/tdiary/theme
+tdiary_theme_path: /var/www/tdiary/theme
+tdiary_theme: light-blue
+
+## parts of templates
+#author: Your name
+#made: mailto:webmaster@example.jp
+#favicon: /favicon.ico
+#logo_html: <img src="http://planet.example.jp/images/logo.png" width="168" height="150" alt="">
+date_strftime_format: '%Y-%m-%d'
+sanchor_strftime_format: '%H:%M:%S'
+
+## templates search path
+#templates_path:
+#  - /path/to/override/templates
+#  - /path/to/other/override/templates
+
+## formatter
+formatter: default_formatter
+#formatter: sample_formatter
+#formatter: your_formatter
+
+## spam filter (default_formatter feature)
+## (filtered if last value is true, output if false)
+filter: |
+    if (/ツッコミ/ =~ k(item.title) &&
+        (
+          (k(item.content_encoded).scan(/http:/).size >= 5) ||
+          (k(item.description).scan(/http:/).size >= 5) ||
+          (/\[\/url\]/ =~ k(item.content_encoded)) ||
+          (/\[\/url\]/ =~ k(item.description)) ||
+          (/★/ =~ k(item.dc_creator)) ||
+          /@google\.com/ =~ k(item.dc_creator)
+        ))
+      true
+    else
+      false
+    end

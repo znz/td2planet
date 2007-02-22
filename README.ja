@@ -1,0 +1,66 @@
+= TD2Planet
+これはrubyによるplanet実装です。
+主にtDiaryのmakerss.rbプラグインの出力を扱う用に調整してあります。
+
+planetとは何かについては http://www.planetplanet.org などを
+参照してください。
+
+== インストール
+=== setup.rbを使ったインストール
+1. ruby setup.rb
+
+=== rubygemsを使ったインストール
+1. gem build *.gemspec
+2. gem install *.gem
+
+== 使い方
+1. config.yamlを適当なところにコピーして編集
+2. td2planet.rb config.yaml
+3. 必要なら出力されたファイルを公開ディレクトリにコピー
+4. 必要ならcronなどで定期的に実行
+
+=== インストールせずに使う方法
+1. config.yamlを編集
+2. ruby -I lib bin/td2planet.rb config.yaml
+3. 以降は上と同じ
+
+== セキュリティ上の注意
+信頼できないRSSは設定しないでください。
+output_htmlで指定したファイルには元のRSSのcontent:encodedの内容が、
+スクリプトなどを含んでいたとしても、そのまま出力されます。
+
+セキュリティ上の問題を避けるため、このplanetのドメインを他の
+コンテンツのドメインとわけることをお薦めします。
+(例えば planet.example.jp)
+
+
+== 出力のカスタマイズ
+カスタマイズ後、"td2planet.rb -n config.yaml"で出力を更新できます。
+
+=== テンプレートのカスタマイズ
+1. カスタマイズするテンプレート用のディレクトリを作成
+2. カスタマイズしたいテンプレートファイルをtemplates以下からコピー
+3. コピーしたテンプレートファイルを編集
+4. カスタマイズしたテンプレート用のディレクトリをconfig.yamlのtemplates_pathに追加
+
+=== Formatterのカスタマイズ
+1. default_formatter.rbかsample_formatter.rbを./your_formatter.rbなどにコピー
+2. ファイルを編集(DefaultFormatterかSampleFormatterをファイル名がyour_formatter.rbならYourFormatterに変更する必要あり)
+
+== Q&A
+[Q. なぜcontent:encodedをそのまま出力?]
+ A. 安全なホワイトリストやブラックリストを保守できないため。
+ (ホワイトリストの例: http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%A5%C0%A5%A4%A5%A2%A5%EA%A1%BCXSS%C2%D0%BA%F6 )
+[Q. RSSに内容をいれていないのはなぜ?]
+ A. 他のフィードリーダーを使っているのなら、opmlを使って
+ 元のフィードをインポートして購読できるから。
+
+== License
+setup.rb:: GNU LGPL
+other files:: MIT-LICENSE
+
+Copyright (c) 2006, 2007 Kazuhiro NISHIYAMA
+
+--
+# -*- coding: utf-8 -*-
+# vim: ts=2 sw=2 sts=2 fenc=utf-8:
