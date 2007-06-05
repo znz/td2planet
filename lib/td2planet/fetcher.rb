@@ -38,7 +38,7 @@ module TD2Planet
             text = cache_file.read
           rescue Exception
             puts "ERROR: #{$!} (#{$!.class}) on #{uri}"
-            raise
+            next
           else
             if text.status[0] == '200' && /rss/ =~ text
               cache_file.open('wb'){|f| f.write(text) }

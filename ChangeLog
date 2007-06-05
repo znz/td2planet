@@ -1,3 +1,8 @@
+2007-06-05  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
+	* lib/td2planet/fetcher.rb (TD2Planet::Fetcher#fetch_all_rss):
+	do not stop when exception.
+
 2007-02-22  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
 	* Initial public release.
