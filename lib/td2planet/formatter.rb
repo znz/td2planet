@@ -173,7 +173,7 @@ module TD2Planet
     end
 
     def to_author(item)
-      if item.dc_creator
+      if item.respond_to?(:dc_creator) && item.dc_creator
         " (#{hk(item.dc_creator)})"
       else
         ""

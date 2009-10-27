@@ -53,13 +53,6 @@ module TD2Planet
         text = fixup_rss(text)
         rss_list << RSS::Parser.parse(text, false)
       end
-      rss_list.each do |rss|
-        rss.items.each do |item|
-          unless item.respond_to?(:dc_creator)
-            def item.dc_creator; "(unknown creator)"; end
-          end
-        end
-      end
       rss_list
     end
 
