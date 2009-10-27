@@ -6,6 +6,9 @@
 
 	* lib/td2planet/*.rb: update copyright year. remove #-- and #++.
 
+	* README: update description. thanks debian-l10n-english ML.
+	http://lists.debian.org/debian-l10n-english/2007/06/msg00123.html
+
 2009-10-28  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
 	* lib/td2planet/formatter.rb: ignore error of URI.parse.
