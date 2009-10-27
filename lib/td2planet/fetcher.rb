@@ -12,12 +12,13 @@ require 'uri'
 
 module TD2Planet
   class Fetcher
-    def initialize(cache_dir, dry_run=false)
+    def initialize(cache_dir, dry_run=false, user_agent="td2planet")
       @cache_dir = Pathname.new(cache_dir)
       unless @cache_dir.exist?
         @cache_dir.mkdir
       end
       @dry_run = dry_run
+      @user_agent = user_agent
     end
 
     def fetch_all_rss(uris)
@@ -31,7 +32,7 @@ module TD2Planet
           text = nil
           begin
             puts "fetch: #{uri}"
-            text = URI.parse(uri).read
+            text = URI.parse(uri).read("User-Agent" => @user_agent)
           rescue Timeout::Error
             # fallback
             puts "ERROR: timeout #{uri}"
@@ -51,6 +52,13 @@ module TD2Planet
         end
         text = fixup_rss(text)
         rss_list << RSS::Parser.parse(text, false)
+      end
+      rss_list.each do |rss|
+        rss.items.each do |item|
+          unless item.respond_to?(:dc_creator)
+            def item.dc_creator; "(unknown creator)"; end
+          end
+        end
       end
       rss_list
     end

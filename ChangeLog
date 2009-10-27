@@ -1,3 +1,12 @@
+2009-10-28  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
+	* lib/td2planet/fetcher.rb: add User-Agent.
+
+	* lib/td2planet/fetcher.rb, lib/td2planet/formatter.rb,
+	data/td2planet/templates/day.rhtml,
+	data/td2planet/templates/footer.rhtml,
+	data/td2planet/templates/opml.rxml: allow missing properties.
+
 2007-06-05  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
 	* lib/td2planet/fetcher.rb (TD2Planet::Fetcher#fetch_all_rss):

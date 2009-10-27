@@ -28,7 +28,7 @@ module TD2Planet
     def_erb_method('footer()')
 
     def k(s)
-      NKF.nkf('-wm0', s)
+      NKF.nkf('-wm0', s.to_s)
     end
     def hk(s)
       h(k(s))
@@ -75,13 +75,16 @@ module TD2Planet
     end
 
     def date_format(item)
+      return "" unless item.respond_to?(:date) && item.date
       item.date.localtime.strftime(@config['date_strftime_format'])
     end
     def sanchor_format(item)
+      return "" unless item.respond_to?(:date) && item.date
       item.date.localtime.strftime(@config['sanchor_strftime_format'])
     end
 
     def too_old?(item, sec=7*24*60*60)
+      return false unless item.respond_to?(:date) && item.date
       item.date < Time.now - sec
     end
 
@@ -138,7 +141,7 @@ module TD2Planet
     end
 
     def to_section_body(item)
-      if item.content_encoded
+      if item.respond_to?(:content_encoded) && item.content_encoded
         k(item.content_encoded).gsub(/<([aA]\b[\s\S]+?)>/) do
           a = tag_attr_relative_path_to_absolute_uri($1, "href", item.link)
           %Q!<#{a} rel="nofollow">!
@@ -165,6 +168,7 @@ module TD2Planet
     end
 
     def to_categories(item)
+      return "" unless item.respond_to?(:dc_subjects)
       h(item.dc_subjects.collect{|s|"[#{k(s.content)}]" if /./ =~ s.content})
     end
 

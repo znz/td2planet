@@ -6,10 +6,12 @@
 	<div class="block">
 		<h3>Subscriptions</h3>
 		<ul>
-<% @rss_list.sort_by{|rss| -rss.item.date.to_i }.each do |rss| -%>
+<% @rss_list.sort_by{|rss| item, = rss.items; item.respond_to?(:date) ? -item.date.to_i : 0 }.each do |rss| -%>
 				<li>
 					<a href="<%=hk rss.channel.link %>" title="<%=hk rss.channel.description %>"><%=hk rss.channel.title %></a>
+<%- if rss.channel.respond_to?(:about) -%>
 					<a href="<%=hk rss.channel.about %>">(feed)</a>
+<%- end -%>
 				</li>
 <% end -%>
 		</ul>

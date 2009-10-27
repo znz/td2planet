@@ -8,7 +8,7 @@
 <% else -%>
 			<%=hk rss.channel.title %>
 <% end -%>
-<% if rss.channel.dc_creator -%>
+<% if rss.channel.respond_to?(:dc_creator) && rss.channel.dc_creator -%>
 			(<%=hk rss.channel.dc_creator %>)
 <% end -%>
 		</span>
@@ -18,7 +18,7 @@
 		<%= section(item, rss) -%>
 <% end -%>
 	</div>
-<% if /./ =~ rss.channel.dc_rights.to_s -%>
+<% if rss.channel.respond_to?(:dc_rights) && /./ =~ rss.channel.dc_rights.to_s -%>
 	<div class="comment">
 		<!--<div class="caption"></div>-->
 		<div class="commentshort">
