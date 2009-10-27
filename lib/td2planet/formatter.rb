@@ -132,9 +132,9 @@ module TD2Planet
     end
 
     def tag_attr_relative_path_to_absolute_uri(tag, attr_name, base_uri)
-      tag.gsub!(/#{attr_name}=([\"\'])([^\"\']+)\1/i) do
+      tag.gsub!(/#{Regexp.quote(attr_name)}=([\"\'])([^\"\']*)\1/i) do
         %Q!#{attr_name}=#{$1}#{relative_path_to_absolute_uri($2, base_uri)}#{$1}!
-      end or tag.gsub!(/#{attr_name}=(\S+)/) do
+      end or tag.gsub!(/#{Regexp.quote(attr_name)}=(\S+)/) do
         %Q!#{attr_name}=#{relative_path_to_absolute_uri($1, base_uri)}!
       end
       tag
