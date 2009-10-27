@@ -129,6 +129,8 @@ module TD2Planet
       else
         uri
       end
+    rescue URI::InvalidURIError
+      attr_value
     end
 
     def tag_attr_relative_path_to_absolute_uri(tag, attr_name, base_uri)
