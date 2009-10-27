@@ -12,7 +12,7 @@
 <% end -%>
 	</head>
 	<body>
-		<% rss_list.sort_by{|rss| item, = rss.items; item.respond_to?(:date) ? -item.date.to_i : 0 }.each do |rss| -%>
+		<% rss_list.sort_by{|rss| rss.respond_to?(:item) && rss.item.respond_to?(:date) ? -rss.item.date.to_i : 0 }.each do |rss| -%>
 			<outline text="<%=hk rss.channel.title %>" type="link" xmlUrl="<%=hk rss.channel.link %>"/>
 		<% end -%>
 	</body>
