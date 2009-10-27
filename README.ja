@@ -59,7 +59,7 @@ output_htmlで指定したファイルには元のRSSのcontent:encodedの内容
 setup.rb:: GNU LGPL
 other files:: MIT-LICENSE
 
-Copyright (c) 2006, 2007 Kazuhiro NISHIYAMA
+Copyright (c) 2006, 2007, 2009 Kazuhiro NISHIYAMA
 
 --
 # -*- coding: utf-8 -*-

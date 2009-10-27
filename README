@@ -56,7 +56,7 @@ After customize, run "td2planet.rb -n config.yaml" to update output files.
 setup.rb:: GNU LGPL
 other files:: MIT-LICENSE
 
-Copyright (c) 2006, 2007 Kazuhiro NISHIYAMA
+Copyright (c) 2006, 2007, 2009 Kazuhiro NISHIYAMA
 
 --
 # -*- coding: utf-8 -*-

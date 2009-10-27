@@ -1,5 +1,13 @@
 2009-10-28  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
+	* lib/td2planet/version.rb: bump up version.
+
+	* README, README.ja: update copyright year.
+
+	* lib/td2planet/*.rb: update copyright year. remove #-- and #++.
+
+2009-10-28  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
 	* lib/td2planet/formatter.rb: ignore error of URI.parse.
 	see http://bugs.debian.org/552186
 

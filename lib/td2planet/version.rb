@@ -1,13 +1,11 @@
-#--
 # -*- mode: ruby; coding: utf-8 -*-
 # vim: set filetype=ruby ts=2 sw=2 sts=2 fenc=utf-8:
 #
-# copyright (c) 2006, 2007 Kazuhiro NISHIYAMA
-#++
+# copyright (c) 2006, 2007, 2009 Kazuhiro NISHIYAMA
 
 module TD2Planet
-  TD2PLANET_VERSION = "0.1.0"
-  TD2PLANET_RELEASE_DATE = "2007-02-22"
+  TD2PLANET_VERSION = "0.2.0"
+  TD2PLANET_RELEASE_DATE = "2009-10-29"
 
   # return ruby version string (simulate output of ruby -v)
   def self.ruby_version
