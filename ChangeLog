@@ -1,3 +1,7 @@
+2009-10-29  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
+	* td2planet.gemspec: add description.
+
 2009-10-28  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
 	* lib/td2planet/version.rb: bump up version.

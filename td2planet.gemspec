@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
    s.rubyforge_project = "td2planet"
 
    s.platform = Gem::Platform::RUBY
+   s.description = "Ruby-based server-side blog aggregator"
    s.summary = "planet of ruby, mainly for tdiary"
    s.files = [
      Dir.glob("{bin,lib}/**/*.rb"),
