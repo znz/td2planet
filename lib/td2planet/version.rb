@@ -9,7 +9,9 @@ module TD2Planet
 
   # return ruby version string (simulate output of ruby -v)
   def self.ruby_version
-    if defined?(RUBY_PATCHLEVEL)
+    if defined?(RUBY_DESCRIPTION)
+      RUBY_DESCRIPTION
+    elsif defined?(RUBY_PATCHLEVEL)
       "ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE} patchlevel #{RUBY_PATCHLEVEL}) [#{RUBY_PLATFORM}]"
     else
       "ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]"

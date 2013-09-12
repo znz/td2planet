@@ -1,5 +1,9 @@
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
+	* lib/td2planet/version.rb: use RUBY_DESCRIPTION if available.
+
+2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
 	* lib/td2planet/version.rb: bump version to 0.3.0.
 
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
