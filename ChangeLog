@@ -1,5 +1,9 @@
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
+	* bin/td2planet.rb: remove -Ku and use ruby instead of ruby1.8.
+
+2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
 	* lib/td2planet/version.rb: use RUBY_DESCRIPTION if available.
 
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
