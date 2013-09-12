@@ -1,5 +1,11 @@
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
+	* setup.rb: removed.
+	* README.rdoc: remove about setup.rb.
+	* README.ja.rdoc: ditto.
+
+2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
 	* README.rdoc: rename from README.
 	* README.ja.rdoc: rename from README.ja.
 

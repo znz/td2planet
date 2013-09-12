@@ -6,9 +6,6 @@ This package is a server-side blog aggregator (commonly called a
 See http://www.planetplanet.org about 'planet'.
 
 == Install
-=== Install using setup.rb
-1. ruby setup.rb
-
 === Install using rubygems
 1. gem build *.gemspec
 2. gem install *.gem
@@ -55,10 +52,9 @@ After customize, run "td2planet.rb -n config.yaml" to update output files.
  from opml to the feed reader.
 
 == License
-setup.rb:: GNU LGPL
-other files:: MIT-LICENSE
+MIT-LICENSE
 
-Copyright (c) 2006, 2007, 2009 Kazuhiro NISHIYAMA
+Copyright (c) 2006, 2007, 2009, 2013 Kazuhiro NISHIYAMA
 
 --
 # -*- coding: utf-8 -*-
