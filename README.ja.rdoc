@@ -47,10 +47,10 @@ output_htmlで指定したファイルには元のRSSのcontent:encodedの内容
 == Q&A
 [Q. なぜcontent:encodedをそのまま出力?]
  A. 安全なホワイトリストやブラックリストを保守できないため。
- (ホワイトリストの例: http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%A5%C0%A5%A4%A5%A2%A5%EA%A1%BCXSS%C2%D0%BA%F6 )
+    (ホワイトリストの例: http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%A5%C0%A5%A4%A5%A2%A5%EA%A1%BCXSS%C2%D0%BA%F6 )
 [Q. RSSに内容をいれていないのはなぜ?]
  A. 他のフィードリーダーを使っているのなら、opmlを使って
- 元のフィードをインポートして購読できるから。
+    元のフィードをインポートして購読できるから。
 
 == License
 MIT-LICENSE

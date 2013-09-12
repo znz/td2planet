@@ -46,10 +46,10 @@ After customize, run "td2planet.rb -n config.yaml" to update output files.
 == Q&A
 [Q. Why do this planet outputs content:encoded as is?]
  A. I can not keep safe white lists and/or black lists.
- (see one of white lists: http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%A5%C0%A5%A4%A5%A2%A5%EA%A1%BCXSS%C2%D0%BA%F6 (Japanese))
+    (see one of white lists: http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%A5%C0%A5%A4%A5%A2%A5%EA%A1%BCXSS%C2%D0%BA%F6 (Japanese))
 [Q. Why do not output feeds include contents?]
  A. If you use other feed reader, you can import original feeds
- from opml to the feed reader.
+    from opml to the feed reader.
 
 == License
 MIT-LICENSE
