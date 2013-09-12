@@ -1,5 +1,9 @@
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
+	* td2planet.gemspec: add license.
+
+2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
 	* setup.rb: removed.
 	* README.rdoc: remove about setup.rb.
 	* README.ja.rdoc: ditto.

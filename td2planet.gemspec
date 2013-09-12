@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
    s.platform = Gem::Platform::RUBY
    s.description = "Ruby-based server-side blog aggregator"
    s.summary = "planet of ruby, mainly for tdiary"
+   s.license = 'MIT'
    s.files = [
      Dir.glob("{bin,lib}/**/*.rb"),
      %w"ChangeLog MIT-LICENSE README.rdoc README.ja.rdoc",
