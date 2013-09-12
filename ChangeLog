@@ -1,5 +1,9 @@
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
+	* lib/td2planet/version.rb: bump version to 0.3.0.
+
+2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
 	* td2planet.gemspec: add license.
 
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
