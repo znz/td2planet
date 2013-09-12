@@ -1,5 +1,10 @@
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
+	* README.rdoc: rename from README.
+	* README.ja.rdoc: rename from README.ja.
+
+2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
 	* td2planet.gemspec: change homepage from rubyforge to github.
 
 2009-10-29  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>

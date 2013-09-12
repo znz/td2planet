@@ -15,13 +15,13 @@ Gem::Specification.new do |s|
    s.summary = "planet of ruby, mainly for tdiary"
    s.files = [
      Dir.glob("{bin,lib}/**/*.rb"),
-     %w"ChangeLog MIT-LICENSE README README.ja",
+     %w"ChangeLog MIT-LICENSE README.rdoc README.ja.rdoc",
      %w"config.yaml",
      Dir.glob("**/templates/*.r{html,xml}"),
    ].flatten.sort
    s.require_path = "lib"
    s.executables = %w"td2planet.rb"
    s.has_rdoc = true
-   s.rdoc_options = %w"--charset utf-8 --inline-source --line-numbers --main README"
-   s.extra_rdoc_files = %w"README README.ja"
+   s.rdoc_options = %w"--charset utf-8 --inline-source --line-numbers --main README.rdoc"
+   s.extra_rdoc_files = %w"README.rdoc README.ja.rdoc"
 end
