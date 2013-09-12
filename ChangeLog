@@ -1,5 +1,9 @@
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
 
+	* bin/td2planet.rb: set $KCODE="u" unless ruby 1.9 or later.
+
+2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>
+
 	* bin/td2planet.rb: remove -Ku and use ruby instead of ruby1.8.
 
 2013-09-12  Kazuhiro NISHIYAMA  <zn@mbf.nifty.com>

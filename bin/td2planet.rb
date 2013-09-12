@@ -4,6 +4,10 @@
 #
 # copyright (c) 2006, 2007, 2013 Kazuhiro NISHIYAMA
 
+if RUBY_VERSION < "1.9"
+  $KCODE = "u"
+end
+
 require 'td2planet/runner'
 require 'td2planet/version'
 
